@@ -1,0 +1,28 @@
+#######
+# str #
+#######
+
+Compactly display the internal structure of an R object
+
+##################
+# Random numbers #
+##################
+
+rnorm - generate random Normal variables with a given mean and standard deviation
+dnorm - evaluate the Normal probability density (with given mean/SD) at a point (or vector of points)
+pnorm - evaluate the cumulative distribution function for a Normal distribution
+rpois - generate random Poisson variates with a given rate
+
+set.seed ensures reproducibility (reproduce numbers that have been already generated)
+
+#############
+# Profiling #
+#############
+
+system.time() - tells you the amount of time R takes evaluating an expression
+
+Using Rprof():
+	- should not be used with system.time()
+	- summaryRprof() function sumarizes the output from Rprof() (otherwise its not readable)	
+		o by.total divides the time spend in each function by total run time
+		o by.self does the same but first subtracts out time spent in functions above in the call stack

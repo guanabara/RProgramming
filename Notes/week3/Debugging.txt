@@ -1,0 +1,16 @@
+#############
+# Debugging #
+#############
+
+Indications that something's not right:
+	~Message
+	~Warning
+	~Error
+	~Condition
+
+Tools
+	traceback, prints out the function call stack after an error occurs
+	debug, 	flags a function for debug mode
+	browser, suspends the execution of a function wherever it is called and puts the function in debug mode
+	trace, allows you to insert debugging code into a function at specific places
+	recover, allows you to modify the error behaviour so that you can browse the function call stack

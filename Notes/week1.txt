@@ -1,0 +1,56 @@
+##############
+#R Data Types#
+##############
+Vectors and Lists
+Vectors can only contain objects of the same type
+Lists can contain objects of different types
+Creating vectors:
+	using c() function, x<-c(0.5,0.6)
+	using vector() function, x<-vector("numeric", length=10)
+Creating lists:
+	x<-list(1,"a", TRUE) #different types can be stored
+
+Matrices
+	m<-matrix(nrow=2, ncol=3) # initialized with NA values
+	m<-matrix(1:6, nrow=2, ncol=3)
+	x<-1:3, y<-10:12, cbind(x,y), rbind(x,y)
+
+Factors (used to represent categorical data [ie. male|female]
+	x<-factor(c("low", "medium", "high"))
+
+Dataframes
+	Used to store tabular data
+	Created using read.table() or read.csv()
+	Dataframe can store objects of different classes
+
+##############
+#Reading data#
+##############
+
+read.table(file, header, sep, colClasses, nrows, comment.char, skip, stringsAsFactors)
+read.csv
+readLines
+write.table
+writeLines
+
+For larger tables
+Defining colClasses argument can make read.table run much faster, often twice as fast. (It requires to know the class of each column)
+Setting nrows doesn't make R run faster but it helps with memory usage.
+
+
+#############
+#Connections#
+#############
+file, url, gzfile
+
+############
+#Subsetting#
+############
+x[1]
+x[1:5]
+x[x>3]
+x$colName = x[[colName]]
+x[1,] #first row
+x[,1] #first column
+
+

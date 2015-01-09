@@ -1,0 +1,58 @@
+###########
+# if-else #
+###########
+
+[y<-] if (condition){}
+else if {}
+else {}
+
+#############
+# for loops #
+#############
+x<-c("a","b","c","d")
+for (i in 1:10){//exp}
+for (i in seq_along(x)){//}
+for (letter in x){//}
+
+###############
+# while loops #
+###############
+
+while(count<10){//do something}
+
+#####################
+# repeat/break/next #
+#####################
+repeat {
+	if (condition)
+	{
+		break;
+	}
+	if (other_condition)
+	{
+		next; ## or return;
+	}
+}
+
+###########
+# Scoping #
+###########
+Lexical Scoping
+make.power <- function(n) {
+	pow <- function(x) {
+		x^n
+	}
+	pow
+}
+cube <- make.power(3)
+square <- make.power(2)
+cube(3)
+  [1] 27
+square(3)
+  [1] 9
+
+###################
+# Dates and Times #
+###################
+Dates are stored internally as the number os days since 1970-01-01
+Times are stored internally as the number os seconds since 1970-01-01

@@ -1,0 +1,61 @@
+##################
+# Loop Functions #
+##################
+
+lapply - loop over a list and evaluate a function on each element [returns a list, regardless of input]
+
+##########
+# sapply #
+##########
+sapply - same as lapply but try to simplify the result
+	o if the result is a list of size 1, then a vector is returned
+	o if the result is a list where every element is a vector of the same length (> 1) a matrix is returned
+	o otherwise returns a list
+Ex: Let x be a matrix with 20 rows and ten columns
+
+apply(x,2,mean)
+aplly mean function to the 2nd dimension (columns) of x, and collapses the 1st dimension (rows)
+
+
+#########
+# apply #
+#########
+apply - apply a function over the margins of an array
+	o often used to apply a function to the rows or columns of a matrix
+	o can be used with general arrays
+	o its not faster than writing a loop, but works in one line
+
+Shortcuts (faster on large matrix)
+rowSums = apply(x,1,sum)
+rowMeans = apply(x,1,mean)
+colSums = apply(x,2,sum)
+colMeans = apply(x,2,mean)
+
+##########
+# mapply # 
+##########
+mapply - multivariate version of lapply
+	o applies a function in parallel over a set of different arguments
+
+##########
+# tapply #
+##########
+
+tapply - is used to apply a function over subsets of a vector
+
+#########
+# split #
+#########
+split takes a vector or other objects and splits into groups determined by a factor or list of factors
+
+  Ozone Solar.R Wind Temp Month Day
+1    41     190  7.4   67     5   1
+2    36     118  8.0   72     5   2
+3    12     149 12.6   74     5   3
+4    18     313 11.5   62     5   4
+5    NA      NA 14.3   56     5   5
+6    28      NA 14.9   66     5   6 
+
+if we want to calculate the mean of each variable in each month
+s<- split(airquality, airquality$Month)
+lapply(s, function(x) colMeans(x[, c("Ozone", "Solar.R", "Wind")]))
